@@ -2,8 +2,12 @@ extends layout
 
 block content
   h1= title
+  
+  p
+    | List of crash reports
+
   ol
     each record in records
       li
         a(href='view/' + record.id)
-          = 'v' + record.version + ' ' + record.time.toLocaleString()
+          = 'v' + record.version + '_' + record.time.toLocaleString()
