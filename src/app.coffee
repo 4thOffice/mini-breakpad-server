@@ -17,7 +17,7 @@ db.on 'load', ->
   console.log "Listening on port #{port}"
 
 app.set 'views', path.resolve(__dirname, '..', 'views')
-app.set 'view engine', 'jade'
+app.set 'view engine', 'pug'
 app.use bodyParser.json()
 
 app.use express.static(path.join(__dirname, '..', 'public'))
