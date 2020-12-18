@@ -53,10 +53,8 @@ body {
     display: flex;
 }
 
-.report {
-    padding: 5px 20px;
-}
-
 .report pre {
     background-color: #e4d8d8;
+    padding: 10px;
+    overflow-x: scroll;
 }
