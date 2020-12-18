@@ -1,10 +1,12 @@
 extends layout
 
 block content
+    .index-title #{title}
+
     .fields
-    pre
-        for v, k in fields
-            = k + ": " + v + "\n"
+        pre
+            for v, k in fields
+                = k + ": " + v + "\n"
 
     .report
-    pre= report
+        pre= report
