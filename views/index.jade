@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    div.index-title= DTA crash reports
+    .index-title #{DTA crash reports}
 
     p.sub-title
         | List of crash reports
@@ -19,5 +19,4 @@ block content
                     td #{record.time.toLocaleString()}
                     td #{record.version}
                     td
-                        a(href='view/' + record.id)
-                        = view 'v' + record.version + '_' + 
+                        a(href='view/' + record.id) View
