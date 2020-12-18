@@ -3,19 +3,18 @@ extends layout
 block content
     .index-title DTA crash reports
 
-    p.sub-title
-        | List of crash reports
-
-    table
-        tr
-            th Id
-            th Date
-            th Electron version
-            th Link
-        tbody
+    table.list-of-records
+        thead.table-header
+            tr
+                th Id
+                th Date
+                th Electron version
+                th Link
+        tbody.table-body
             each record in records
                 tr.record-row
                     td #{record.id}
                     td #{record.time.toLocaleString()}
                     td #{record.version}
-                    td View
+                    td
+                         a(href='view/' + record.id) View

@@ -7,11 +7,30 @@ body {
     padding: 5px 100px;
 }
 
+/**
+ ** INDEX
+ **/
 .index-title {
     text-align: center;
     font-size: 40px;
 }
 
-.sub-title {
-    font-size: 15px;
+.list-of-records {
+    align-self: center;
+    width: 100%;
+    border: #d0d0d0 solid 1px;
+}
+
+.table-header {
+    background-color: #989898;
+    color: white;
+    font-size: 17px;
+    padding: 5px 0px;
+}
+
+.record-row > td {
+    color: #2b2b2b;
+    font-size: 17px;
+    padding: 14px 0px;
+    text-align: center;
 }
