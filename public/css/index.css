@@ -13,16 +13,13 @@ body {
 .index-title {
     text-align: center;
     font-size: 40px;
+    margin-bottom: 50px;
 }
 
 .list-of-records {
     align-self: center;
     width: 100%;
     border: #d0d0d0 solid 1px;
-}
-
-.list-of-records {
-    margin-top: 50px;
 }
 
 .table-header th {
@@ -42,11 +39,20 @@ body {
 /**
  ** VIEW
  **/
-.index-title {
+.bold {
+    font-weight: 600;
 }
 
 .fields {
+    border: solid 1px #989898;
+    padding: 5px 20px;
+    border-radius: 9px;
 }
 
 .report {
+    padding: 5px 20px;
+}
+
+.report pre {
+    background-color: #e4d8d8;
 }

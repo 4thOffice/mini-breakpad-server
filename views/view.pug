@@ -4,9 +4,10 @@ block content
     .index-title #{title}
 
     .fields
-        pre
-            for v, k in fields
-                = k + ": " + v + "\n"
+        for v, k in fields
+            .field
+                #{k} :
+                    .bold #{v}
 
     .report
         pre= report
