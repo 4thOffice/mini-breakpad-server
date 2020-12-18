@@ -22,6 +22,10 @@ body {
 }
 
 .table-header {
+    margin-top: 50px;
+}
+
+.table-header th {
     background-color: #989898;
     color: white;
     font-size: 17px;
