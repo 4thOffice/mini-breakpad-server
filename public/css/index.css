@@ -49,6 +49,10 @@ body {
     border-radius: 9px;
 }
 
+.field {
+    display: flex;
+}
+
 .report {
     padding: 5px 20px;
 }
