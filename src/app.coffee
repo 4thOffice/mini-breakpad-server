@@ -20,7 +20,7 @@ app.set 'views', path.resolve(__dirname, '..', 'views')
 app.set 'view engine', 'jade'
 app.use bodyParser.json()
 
-console.log "TOLE MAM: ", express.static(__dirname + '/public')
+console.log "TOLE MAM: ",express.static(__dirname + '/public')
 app.use express.static(__dirname + '/public')
 app.use bodyParser.urlencoded({extended: true})
 app.use methodOverride()
