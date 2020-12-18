@@ -19,6 +19,7 @@ db.on 'load', ->
 app.set 'views', path.resolve(__dirname, '..', 'views')
 app.set 'view engine', 'jade'
 app.use bodyParser.json()
+app.use(express.static(__dirname + '/public'));
 app.use bodyParser.urlencoded({extended: true})
 app.use methodOverride()
 app.use (err, req, res, next) ->
