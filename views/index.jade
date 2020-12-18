@@ -1,13 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  
-  p
-    | List of crash reports
+    div.index-title= DTA crash reports
 
-  ol
-    each record in records
-      li
-        a(href='view/' + record.id)
-          = 'v' + record.version + '_' + record.time.toLocaleString()
+    p.sub-title
+        | List of crash reports
+
+    table
+        tr
+            th Id
+            th Date
+            th Electron version
+            th Link
+        tbody
+            each record in records
+                tr.record-row
+                    td #{record.id}
+                    td #{record.time.toLocaleString()}
+                    td #{record.version}
+                    td
+                        a(href='view/' + record.id)
+                        = view 'v' + record.version + '_' + 
