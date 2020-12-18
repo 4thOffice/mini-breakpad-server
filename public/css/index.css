@@ -21,7 +21,7 @@ body {
     border: #d0d0d0 solid 1px;
 }
 
-.table-header {
+.list-of-records {
     margin-top: 50px;
 }
 
@@ -38,3 +38,7 @@ body {
     padding: 14px 0px;
     text-align: center;
 }
+
+/**
+ ** VIEW
+ **/
