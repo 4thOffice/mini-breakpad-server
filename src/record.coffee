@@ -24,6 +24,8 @@ class Record
       unless files.upload_file_minidump?.name?
         return callback new Error('Invalid breakpad upload')
 
+      console.log 'fields: ',fields
+
       record = new Record
         path: files.upload_file_minidump.path
         sender: {ua: req.headers['user-agent'], ip: Record.getIpAddress(req)}
@@ -31,7 +33,7 @@ class Record
         version: fields.ver
         fields: fields
         dumpName: files.upload_file_minidump.name
-        appVersion: fields.appVersion
+        appVersion: fields.version
         appEnvironment: fields.appEnvironment
       callback(null, record)
 
