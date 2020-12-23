@@ -8,13 +8,19 @@ block content
             tr
                 th Id
                 th Date
+                th Dump file name
+                th App version
+                th App environment
                 th Electron version
-                th Link
+                th Report
         tbody.table-body
             each record in records
                 tr.record-row
                     td #{record.id}
                     td #{record.time.toLocaleString()}
+                    td #{record.dumpName}
+                    td #{record.appVersion}
+                    td #{record.appEnvironment}
                     td #{record.version}
                     td
                          a(href='view/' + record.id) View
