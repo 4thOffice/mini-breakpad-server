@@ -46,8 +46,8 @@ class Record
       version: representation.fields.ver
       fields: representation.fields
       dumpName: representation.dumpName
-      appVersion: fields.appVersion
-      appEnvironment: fields.appEnvironment
+      appVersion: representation.appVersion
+      appEnvironment: representation.appEnvironment
 
   # Private: Gets the IP address from request.
   @getIpAddress: (req) ->
