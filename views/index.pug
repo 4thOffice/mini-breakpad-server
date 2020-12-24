@@ -32,8 +32,8 @@ block content
 			$(".delete").click(function(e) {
 				var key = prompt("Please enter API key:", "123-some-API-key");
 				if (key === null) {
-    			    return;
-    			}
+					return;
+				}
 				window.location.href = `delete-dump/${e.target.id}?key=${key}`;
 			});
 		});
