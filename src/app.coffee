@@ -51,7 +51,7 @@ app.get '/delete-dump/:dumpId', (req, res, next) ->
     res.send 401, "Wrong authorization"
     
   console.log 'will delete: ',req.params.dumpId
-  res.redirect "/#{root}"
+  res.render 'index', title: 'Crash Reports', records: db.getAllRecords()
 
 app.get "/#{root}", (req, res, next) ->
   res.render 'index', title: 'Crash Reports', records: db.getAllRecords()

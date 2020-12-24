@@ -36,10 +36,10 @@ body {
 	text-align: center;
 }
 
-.delete {
+td > .delete {
     color: #bd4646;
     text-decoration: underline;
-
+    cursor: pointer;
 }
 
 /**
