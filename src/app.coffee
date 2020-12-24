@@ -43,18 +43,18 @@ app.post '/post', (req, res, next) ->
     res.send path.basename(filename)
     res.end()
 
-app.delete '/dump/:dumpId', (req, res, next) ->
-  if req.query.key != process.env.API_KEY?
-    res.send 401, "Wrong authorization"
-    
-  console.log 'will delete: ',dumpId
-  res.send 200, "ok"
-
 root =
   if process.env.MINI_BREAKPAD_SERVER_ROOT?
     "#{process.env.MINI_BREAKPAD_SERVER_ROOT}/"
   else
     ''
+
+app.get '/delete-dump/:dumpId', (req, res, next) ->
+  if req.query.key != process.env.API_KEY?
+    res.send 401, "Wrong authorization"
+    
+  console.log 'will delete: ',dumpId
+  res.redirect "/#{root}"
 
 app.get "/#{root}", (req, res, next) ->
   res.render 'index', title: 'Crash Reports', records: db.getAllRecords()

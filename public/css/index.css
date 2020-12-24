@@ -37,7 +37,9 @@ body {
 }
 
 .delete {
-	color: red,
+    color: #bd4646;
+    text-decoration: underline;
+
 }
 
 /**
