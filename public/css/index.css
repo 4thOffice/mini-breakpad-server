@@ -29,17 +29,17 @@ body {
 	padding: 5px 0px;
 }
 
+.delete-action {
+    color: #bd4646;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .record-row > td {
 	color: #2b2b2b;
 	font-size: 17px;
 	padding: 14px 0px;
 	text-align: center;
-}
-
-td > .delete {
-    color: #bd4646;
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 /**

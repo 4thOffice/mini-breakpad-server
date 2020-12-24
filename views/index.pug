@@ -25,13 +25,15 @@ block content
 					td #{record.version}
 					td
 						a(href='view/' + record.id) View
-					td.delete(id=record.id) Delete
+					td.delete-action(id=record.id) Delete
 
 	script.
 		$(document).ready(function(){
 			$(".delete").click(function(e) {
-				console.log(e.id)
 				var key = prompt("Please enter API key:", "123-some-API-key");
-				window.location.href = `delete-dump/123?key=${key}`;
+				if (key === null) {
+    			    return;
+    			}
+				window.location.href = `delete-dump/${e.target.id}?key=${key}`;
 			});
 		});
