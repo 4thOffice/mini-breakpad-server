@@ -30,7 +30,7 @@ body {
 }
 
 .delete-action {
-    color: #bd4646;
+    color: #bd4646 !important;
     text-decoration: underline;
     cursor: pointer;
 }
