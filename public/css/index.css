@@ -1,60 +1,64 @@
 * {
-    font-family: monospace;
-    background-color: #ececec;
+	font-family: monospace;
+	background-color: #ececec;
 }
 
 body {
-    padding: 5px 100px;
+	padding: 5px 100px;
 }
 
 /**
- ** INDEX
- **/
+	** INDEX
+	**/
 .index-title {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 50px;
+	text-align: center;
+	font-size: 40px;
+	margin-bottom: 50px;
 }
 
 .list-of-records {
-    align-self: center;
-    width: 100%;
-    border: #d0d0d0 solid 1px;
+	align-self: center;
+	width: 100%;
+	border: #d0d0d0 solid 1px;
 }
 
 .table-header th {
-    background-color: #989898;
-    color: white;
-    font-size: 17px;
-    padding: 5px 0px;
+	background-color: #989898;
+	color: white;
+	font-size: 17px;
+	padding: 5px 0px;
 }
 
 .record-row > td {
-    color: #2b2b2b;
-    font-size: 17px;
-    padding: 14px 0px;
-    text-align: center;
+	color: #2b2b2b;
+	font-size: 17px;
+	padding: 14px 0px;
+	text-align: center;
+}
+
+.delete {
+	color: red,
 }
 
 /**
- ** VIEW
- **/
+	** VIEW
+	**/
 .bold {
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .fields {
-    border: solid 1px #989898;
-    padding: 5px 20px;
-    border-radius: 9px;
+	border: solid 1px #989898;
+	padding: 5px 20px;
+	border-radius: 9px;
 }
 
 .field {
-    display: flex;
+	display: flex;
 }
 
 .report pre {
-    background-color: #e4d8d8;
-    padding: 10px;
-    overflow-x: scroll;
+	background-color: #e4d8d8;
+	padding: 10px;
+	overflow-x: scroll;
 }

@@ -1,26 +1,35 @@
 extends layout
 
 block content
-    .index-title DTA crash reports
+	.index-title DTA crash reports
 
-    table.list-of-records
-        thead.table-header
-            tr
-                th Id
-                th Date
-                th Dump file name
-                th App version
-                th App environment
-                th Electron version
-                th Report
-        tbody.table-body
-            each record in records
-                tr.record-row
-                    td #{record.id}
-                    td #{record.time.toLocaleString()}
-                    td #{record.dumpName}
-                    td #{record.appVersion}
-                    td #{record.appEnvironment}
-                    td #{record.version}
-                    td
-                         a(href='view/' + record.id) View
+	table.list-of-records
+		thead.table-header
+			tr
+				th Id
+				th Date
+				th Dump file name
+				th App version
+				th App environment
+				th Electron version
+				th Report
+				th Manage
+		tbody.table-body
+			each record in records
+				tr.record-row
+					td #{record.id}
+					td #{record.time.toLocaleString()}
+					td #{record.dumpName}
+					td #{record.appVersion}
+					td #{record.appEnvironment}
+					td #{record.version}
+					td
+						a(href='view/' + record.id) View
+					td.delete Delete
+
+script
+	$(document).ready(function(){
+		$(".delete").click(function() {
+			alert("click");
+			});
+	});

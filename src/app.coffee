@@ -12,7 +12,7 @@ webhook = new WebHook
 
 db = new Database
 db.on 'load', ->
-  port = process.env.MINI_BREAKPAD_SERVER_PORT ? 1127
+  port = process.env.MINI_BREAKPAD_SERVER_PORT ? 80
   app.listen port
   console.log "Listening on port #{port}"
 
@@ -33,12 +33,22 @@ app.post '/webhook', (req, res, next) ->
   res.end()
 
 app.post '/post', (req, res, next) ->
+  if req.query.key != process.env.POST_KEY?
+    res.send 401, "Wrong authorization"
+    
   saver.saveRequest req, db, (err, filename) ->
     return next err if err?
 
     console.log 'saved', filename
     res.send path.basename(filename)
     res.end()
+
+app.delete '/dump/:dumpId', (req, res, next) ->
+  if req.query.key != process.env.API_KEY?
+    res.send 401, "Wrong authorization"
+    
+  console.log 'will delete: ',dumpId
+  res.send 200, "ok"
 
 root =
   if process.env.MINI_BREAKPAD_SERVER_ROOT?
