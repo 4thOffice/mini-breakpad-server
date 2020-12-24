@@ -33,9 +33,6 @@ app.post '/webhook', (req, res, next) ->
   res.end()
 
 app.post '/post', (req, res, next) ->
-  if req.query.key != process.env.POST_KEY?
-    res.send 401, "Wrong authorization"
-    
   saver.saveRequest req, db, (err, filename) ->
     return next err if err?
 
@@ -53,7 +50,7 @@ app.get '/delete-dump/:dumpId', (req, res, next) ->
   if req.query.key != process.env.API_KEY?
     res.send 401, "Wrong authorization"
     
-  console.log 'will delete: ',dumpId
+  console.log 'will delete: ',req.params.dumpId
   res.redirect "/#{root}"
 
 app.get "/#{root}", (req, res, next) ->
