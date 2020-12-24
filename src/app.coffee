@@ -49,9 +49,11 @@ root =
 app.get '/delete-dump/:dumpId', (req, res, next) ->
   if req.query.key != process.env.API_KEY?
     res.send 401, "Wrong authorization"
+    res.end()
+    return
     
   console.log 'will delete: ',req.params.dumpId
-  res.render 'index', title: 'Crash Reports', records: db.getAllRecords()
+  res.redirect "/#{root}"
 
 app.get "/#{root}", (req, res, next) ->
   res.render 'index', title: 'Crash Reports', records: db.getAllRecords()
