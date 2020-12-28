@@ -30,6 +30,11 @@ class Database extends EventEmitter
 
     callback null, Record.unserialize(id, @db.get(id))
 
+  # Public: Remove record from database by id
+  deleteRecord: (id, callback) ->
+    @db.rm id
+    callback null
+
   # Public: Returns all records as an array.
   getAllRecords: ->
     records = []

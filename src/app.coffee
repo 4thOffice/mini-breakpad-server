@@ -4,6 +4,7 @@ path = require 'path'
 express = require 'express'
 reader = require './reader'
 saver = require './saver'
+remover = require './remover'
 Database = require './database'
 WebHook = require './webhook'
 
@@ -54,7 +55,10 @@ app.get '/delete-dump/:dumpId', (req, res, next) ->
     return
 
   console.log 'will delete: ', req.params.dumpId
-  res.redirect "/#{root}"
+  db.restoreRecord req.params.dumpId, (err, record) ->
+    db.deleteRecord req.params.dumpId, (err, record) ->
+      remover.removeMinidump record.path, (err) ->
+        res.redirect "/#{root}"
 
 app.get "/#{root}", (req, res, next) ->
   res.render 'index', title: 'Crash Reports', records: db.getAllRecords()
