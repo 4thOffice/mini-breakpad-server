@@ -48,6 +48,7 @@ root =
 
 app.get '/delete-dump/:dumpId', (req, res, next) ->
   if req.query.key != process.env.API_KEY?
+    console.log 'wrong key in query. Is ',req.query.key,' but should be: ',process.env.API_KEY
     res.send 401, "Wrong authorization"
     res.end()
     return
