@@ -1,7 +1,7 @@
 path = require 'path'
 dirty = require 'dirty'
 mkdirp = require 'mkdirp'
-{EventEmitter} = require 'events'
+{ EventEmitter } = require 'events'
 Record = require './record'
 
 class Database extends EventEmitter
