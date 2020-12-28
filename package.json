@@ -30,10 +30,10 @@
     "wrench": "1.5.x"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.2",
+    "coffeescript": "2.5.x",
     "grunt": "~0.4.1",
-    "grunt-contrib-coffee": "~0.6.6",
-    "grunt-coffeelint": "~0.0.6",
+    "grunt-contrib-coffee": "2.1.x",
+    "grunt-coffeelint": "0.0.x",
     "grunt-cli": "~0.1.7",
     "grunt-shell": "~0.2.2",
     "rimraf": "~2.1.4"
