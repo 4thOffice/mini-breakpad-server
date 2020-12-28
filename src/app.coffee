@@ -56,7 +56,8 @@ app.get '/delete-dump/:dumpId', (req, res, next) ->
 
   console.log 'will delete: ', req.params.dumpId
   db.restoreRecord req.params.dumpId, (err, record) ->
-    db.deleteRecord req.params.dumpId, (err, record) ->
+    console.log 'record: ', record
+    db.deleteRecord req.params.dumpId, (err) ->
       remover.removeMinidump record.path, (err) ->
         res.redirect "/#{root}"
 
