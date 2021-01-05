@@ -12,6 +12,7 @@ block content
 				th App version
 				th App environment
 				th Electron version
+				th User email
 				th Report
 				th Manage
 		tbody.table-body
@@ -22,6 +23,7 @@ block content
 					td #{record.dumpName}
 					td #{record.appVersion}
 					td #{record.appEnvironment}
+					td #{record.email}
 					td #{record.version}
 					td
 						a(href='view/' + record.id) View

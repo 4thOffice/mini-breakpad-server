@@ -12,8 +12,9 @@ class Record
   dumpName: null
   appVersion: null
   appEnvironment: null
+  email: null
 
-  constructor: ({@id, @time, @path, @sender, @product, @version, @fields, @dumpName, @appVersion, @appEnvironment}) ->
+  constructor: ({@id, @time, @path, @sender, @product, @version, @fields, @dumpName, @appVersion, @appEnvironment, @email}) ->
     @id ?= uuid.v4()
     @time ?= new Date
 
@@ -33,6 +34,7 @@ class Record
         dumpName: files.upload_file_minidump.name
         appVersion: fields._version
         appEnvironment: fields.appEnvironment
+        email: fields.email
       callback(null, record)
 
   # Public: Restore a Record from raw representation.
@@ -48,6 +50,7 @@ class Record
       dumpName: representation.dumpName
       appVersion: representation.appVersion
       appEnvironment: representation.appEnvironment
+      email: representation.email
 
   # Private: Gets the IP address from request.
   @getIpAddress: (req) ->
@@ -55,6 +58,6 @@ class Record
 
   # Public: Returns the representation to be stored in database.
   serialize: ->
-    time: @time.getTime(), path: @path, sender: @sender, fields: @fields, dumpName: @dumpName, appVersion: @appVersion, appEnvironment: @appEnvironment
+    time: @time.getTime(), path: @path, sender: @sender, fields: @fields, dumpName: @dumpName, appVersion: @appVersion, appEnvironment: @appEnvironment, email: @email
 
 module.exports = Record
