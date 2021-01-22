@@ -9,11 +9,11 @@ class Record
   product: null
   version: null
   fields: null
-  dumpName: null
+  deviceId: null
   appVersion: null
   appEnvironment: null
 
-  constructor: ({@id, @time, @path, @sender, @product, @version, @fields, @dumpName, @appVersion, @appEnvironment}) ->
+  constructor: ({@id, @time, @path, @sender, @product, @version, @fields, @deviceId, @appVersion, @appEnvironment}) ->
     @id ?= uuid.v4()
     @time ?= new Date
 
@@ -30,7 +30,7 @@ class Record
         product: fields.prod
         version: fields.ver
         fields: fields
-        dumpName: files.upload_file_minidump.name
+        deviceId: fields.deviceId
         appVersion: fields._version
         appEnvironment: fields.appEnvironment
       callback(null, record)
@@ -45,7 +45,7 @@ class Record
       product: representation.fields.prod
       version: representation.fields.ver
       fields: representation.fields
-      dumpName: representation.dumpName
+      deviceId: representation.deviceId
       appVersion: representation.appVersion
       appEnvironment: representation.appEnvironment
 
@@ -55,6 +55,6 @@ class Record
 
   # Public: Returns the representation to be stored in database.
   serialize: ->
-    time: @time.getTime(), path: @path, sender: @sender, fields: @fields, dumpName: @dumpName, appVersion: @appVersion, appEnvironment: @appEnvironment
+    time: @time.getTime(), path: @path, sender: @sender, fields: @fields, deviceId: @deviceId, appVersion: @appVersion, appEnvironment: @appEnvironment
 
 module.exports = Record
